@@ -1,0 +1,15 @@
+{ config, pkgs, ... }:
+
+let
+  # 导入模块
+  myModule = import ./module.nix;
+in
+{
+  imports = [
+    ./hardware-configuration.nix
+    ./module.nixmodule.nix
+  ];
+
+  # 配置桌面环境
+  services.xserver.desktopManager.lingmoDesktop.enable = true;
+}
