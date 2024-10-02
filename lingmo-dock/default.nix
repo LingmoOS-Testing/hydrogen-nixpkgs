@@ -13,7 +13,7 @@ pkgs.lib.overridePkgs {
     # Use stdenv.mkDerivation for more control over build environment
     src = fetchFromGitHub {
       owner = "LingmoOS";
-      repo = pkgname;
+      repo = "lingmo-dock";
       rev = "refs/tags/${version}";
       sha256 = "sha2563b07175e2f24c4579041dd30f725a39d8135a873c0b661405a9dde2fcdd395f3";
     };
@@ -30,7 +30,7 @@ pkgs.lib.overridePkgs {
 
     # Customize build and install phases
     mkDerivation {
-      configurePhase = cmake . --build=${stdenv.outPkgs}/bin/packager --config=release;
+      configurePhase = "cmake . --build=${stdenv.outPkgs}/bin/packager --config=release";
       buildPhase = make;
       installPhase = pkgs.lib.installPhase {
         src = ".";

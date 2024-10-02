@@ -2,10 +2,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    lingmo-nixpkgs.url = "github:LingmoOS/hydrogen-nixpkgs";
-
+    lingmo-nixpkgs.url = "github:LingmoOS-Testing/hydrogen-nixpkgs";
     };
-  };
 
   outputs = { self, nixpkgs, ... }: {
     default = nixpkgs.system.buildLinux {

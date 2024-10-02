@@ -13,7 +13,7 @@ pkgs.lib.overridePkgs {
     # Use stdenv.mkDerivation for more control over build environment
     src = fetchFromGitHub {
       owner = "LingmoOS";
-      repo = pkgname;
+      repo = "lingmo-wallpapers";
       rev = "refs/tags/${version}";
       sha256 = "sha2568d2de5f7b0de81594afb8c8d05e2a853594ff4ce909921d989c41651d93fab89";
     };
@@ -26,7 +26,7 @@ pkgs.lib.overridePkgs {
 
     # Customize build and install phases (remove custom prefix)
     mkDerivation {
-      configurePhase = cmake . --build=${stdenv.outPkgs}/bin/packager --config=release;
+      configurePhase = "cmake . --build=${stdenv.outPkgs}/bin/packager --config=release";
       buildPhase = make;
       installPhase = pkgs.lib.installPhase {
         src = ".";
