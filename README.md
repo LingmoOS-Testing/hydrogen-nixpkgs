@@ -8,3 +8,5 @@ Powered by LingmoOS 2.0 Hydrogen
 Contributor: [@arkimium](https://github.com/arkimium)
 
 Licensed under GPL-v3.
+
+Archived. These nixpkgs will be rebuilt at 2025 Q1.
